@@ -1,0 +1,15 @@
+version: '3'
+services:
+  app:
+    container_name: node12
+    build:
+      context: .
+      dockerfile: ./Dockerfile_dev
+    tty: true
+    ports:
+      - 8080:8080
+    volumes:
+      - ./:/app:cached
+      - node_modules:/app/node_modules
+volumes:
+  node_modules: {}
