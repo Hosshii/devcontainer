@@ -1,0 +1,2 @@
+# devconteiner
+node12以下をプロジェクトルートに展開してvscodeのremote containerで開く
