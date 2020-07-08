@@ -1,5 +1,5 @@
 {
-  "name": "node12",
+  "name": "node14",
   "dockerComposeFile": [
     "../docker-compose_dev.yml"
   ],
