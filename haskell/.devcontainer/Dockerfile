@@ -1,1 +1,1 @@
-FROM sheyne/haskell-hie:8.6.5
+FROM haskell:8.10.2
