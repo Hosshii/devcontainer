@@ -1,0 +1,16 @@
+{
+	"name": "vue",
+	"dockerFile": "Dockerfile",
+
+	"settings": {
+		"terminal.integrated.shell.linux": "/bin/bash"
+	},
+
+	"extensions": [
+		"dbaeumer.vscode-eslint",
+		"esbenp.prettier-vscode",
+		"octref.vetur",
+		"peakchen90.vue-beautify",
+		"hookyqr.beautify"
+	]
+}

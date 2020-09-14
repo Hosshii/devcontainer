@@ -1,0 +1,15 @@
+version: "3"
+services:
+  app:
+    container_name: vue
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    tty: true
+    ports:
+      - 8080:8080
+    volumes:
+      - ../:/app:cached
+      - node_modules:/app/node_modules
+volumes:
+  node_modules: {}
