@@ -1,12 +1,12 @@
-FROM node:13.1.0
+FROM node:14.4.0
 
 ENV PROJECT_ROOTDIR /app/
 
 WORKDIR $PROJECT_ROOTDIR
 
-COPY package*.json  $PROJECT_ROOTDIR
+# COPY package*.json  $PROJECT_ROOTDIR
 
-RUN npm install
+# RUN npm install
 
 ENV HOST 0.0.0.0
 
