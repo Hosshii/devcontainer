@@ -1,0 +1,16 @@
+{
+    "name": "GHC 8.6.5 with HIE",
+    "dockerComposeFile": [
+        "./docker-compose.yml"
+    ],
+    "runArgs": [],
+    "service": "app",
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+
+    "workspaceFolder": "/app",
+    "extensions": [
+        "alanz.vscode-hie-server"
+    ]
+}

@@ -1,0 +1,24 @@
+FROM haskell:8.6.5
+
+# ENV GHC_VERSION=``
+# Configure and install GHC 8.6.5, Cachix, and HIE
+
+# install nix
+ENV USER=root
+
+RUN mkdir -m 0755 /nix && chown root /nix \
+    && mkdir /etc/nix && echo "build-users-group =" > /etc/nix/nix.conf \
+    && curl -L https://nixos.org/nix/install | sh \
+    && export PATH="${HOME}/.nix-profile/bin:$PATH" \
+    && nix-channel --add https://nixos.org/channels/nixpkgs-unstable \
+    && nix-channel --update \
+    && nix-env -iA cachix -f https://cachix.org/api/v1/install && cachix use all-hies \
+    && nix-env -iA unstableFallback.selection --arg selector 'p: { inherit (p) ghc865; }' -f https://github.com/infinisil/all-hies/tarball/master 
+
+RUN stack install hoogle --resolver lts-14.27
+
+# ${HOME}は使えない。
+# めんどくさいので/rootを直接書いた
+# ENV PATH "${HOME}/.nix-profile/bin:$PATH"
+ENV PATH "/root/.nix-profile/bin:$PATH"
+
